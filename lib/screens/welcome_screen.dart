@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-/* import 'package:google_fonts/google_fonts.dart'; */
+import 'package:google_fonts/google_fonts.dart';
 
-import 'package:my_design_one/home_screen_widgets/page_one.dart';
-import 'package:my_design_one/home_screen_widgets/page_two.dart';
+import 'package:my_design_one/welcome_screen_widgets/page_one.dart';
+import 'package:my_design_one/welcome_screen_widgets/page_two.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -19,8 +19,7 @@ class WelcomeScreen extends StatelessWidget {
             children: const [
               PageOne(),
               PageTwo(),
-              /* Text('Hola Mundo'),
-              Text('Hola Mundo'), */
+              /* RegisterScreen(), */
             ],
           ),
         ),
