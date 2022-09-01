@@ -58,10 +58,14 @@ class PageTwo extends StatelessWidget {
               ),
             ),
             Expanded(child: Container()),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20.0),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: ButtonInfinityCustom(
                 textButton: 'Continuar',
+                onPressed: () => Navigator.pushNamed(
+                  context,
+                  'register_screen',
+                ),
               ),
             ),
           ],

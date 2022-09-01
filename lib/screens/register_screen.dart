@@ -27,36 +27,41 @@ class RegisterScreen extends StatelessWidget {
                       ),
                       child: Form(
                         child: Column(
-                          children: const [
-                            CustomInput(
+                          children: [
+                            const CustomInput(
                               /* hintText: 'Leonardo', */
                               labelText: 'First name',
                               obsqureText: false,
                             ),
-                            SizedBox(height: 20),
-                            CustomInput(
+                            const SizedBox(height: 20),
+                            const CustomInput(
                               hintText: 'De la cruz',
                               labelText: 'Last name',
                               obsqureText: false,
                             ),
-                            SizedBox(height: 20),
-                            CustomInput(
+                            const SizedBox(height: 20),
+                            const CustomInput(
                               hintText: 'example.email@myemail.com',
                               labelText: 'Email',
                               obsqureText: false,
                             ),
-                            SizedBox(height: 20),
-                            CustomInput(
+                            const SizedBox(height: 20),
+                            const CustomInput(
                               hintText: '1234',
                               labelText: 'Create pin',
                               helperText: 'only 4 numbers',
                               obsqureText: true,
                             ),
-                            SizedBox(height: 30.0),
+                            const SizedBox(height: 30.0),
                             Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 5.0),
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 5.0),
                               child: ButtonInfinityCustom(
                                 textButton: 'Registrarme',
+                                onPressed: () => Navigator.pushNamed(
+                                  context,
+                                  'welcome_screen',
+                                ),
                               ),
                             )
                           ],
