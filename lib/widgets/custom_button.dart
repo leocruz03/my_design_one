@@ -5,11 +5,13 @@ import 'package:google_fonts/google_fonts.dart';
 class ButtonInfinityCustom extends StatelessWidget {
   final void Function() onPressed;
   final String textButton;
+  final Color bgButton;
 
   const ButtonInfinityCustom({
     Key? key,
     required this.textButton,
     required this.onPressed,
+    required this.bgButton,
   }) : super(key: key);
 
   @override
@@ -17,7 +19,7 @@ class ButtonInfinityCustom extends StatelessWidget {
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.black,
+        backgroundColor: bgButton,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
         ),

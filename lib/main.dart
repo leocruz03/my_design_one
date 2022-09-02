@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:my_design_one/screens/home_screen.dart';
+import 'package:my_design_one/screens/login_screen.dart';
 import 'package:my_design_one/screens/register_screen.dart';
 import 'package:my_design_one/screens/welcome_screen.dart';
 /* import 'package:my_design_one/screens/welcome_screen.dart'; */
@@ -21,8 +23,9 @@ class MyApp extends StatelessWidget {
       routes: {
         'welcome_screen': (_) => const WelcomeScreen(),
         'register_screen': (_) => const RegisterScreen(),
+        'login_screen': (_) => const LoginScreen(),
+        'home_screen': (_) => const HomeScreen(),
       },
-      home: const RegisterScreen(),
     );
   }
 }

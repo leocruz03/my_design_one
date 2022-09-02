@@ -62,6 +62,7 @@ class PageTwo extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: ButtonInfinityCustom(
                 textButton: 'Continuar',
+                bgButton: Colors.black,
                 onPressed: () => Navigator.pushNamed(
                   context,
                   'register_screen',
