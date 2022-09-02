@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:animate_do/animate_do.dart';
 
 import 'package:my_design_one/widgets/bottom_navbar.dart';
-import 'package:my_design_one/widgets/custom_transaction.dart';
+import 'package:my_design_one/widgets/scroll_transactions.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -44,73 +44,6 @@ class HomeScreen extends StatelessWidget {
         padding: const EdgeInsets.all(10.0),
         child: FadeInUp(
           child: const BottomNavBar(),
-        ),
-      ),
-    );
-  }
-}
-
-class ScrollTransactions extends StatelessWidget {
-  const ScrollTransactions({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Container(
-          margin: const EdgeInsets.symmetric(vertical: 20),
-          child: Column(
-            children: const [
-              CustomTransaction(
-                textTransaction: 'Netflix',
-                transactionType: 'Pagaste: ',
-                transactionMoney: 10000,
-                colorTransaction: Colors.red,
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              CustomTransaction(
-                textTransaction: 'Netflix',
-                transactionType: 'Recibiste: ',
-                transactionMoney: 10000,
-                colorTransaction: Colors.red,
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              CustomTransaction(
-                textTransaction: 'Netflix',
-                transactionType: 'Pagaste: ',
-                transactionMoney: 10000,
-                colorTransaction: Colors.red,
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              CustomTransaction(
-                textTransaction: 'Netflix',
-                transactionType: 'Pagaste: ',
-                transactionMoney: 10000,
-                colorTransaction: Colors.red,
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              CustomTransaction(
-                textTransaction: 'Netflix',
-                transactionType: 'Pagaste: ',
-                transactionMoney: 10000,
-                colorTransaction: Colors.red,
-              ),
-              SizedBox(
-                height: 10,
-              ),
-            ],
-          ),
         ),
       ),
     );
