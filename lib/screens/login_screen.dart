@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 
 import 'package:google_fonts/google_fonts.dart';
@@ -11,56 +12,58 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Container(
-          margin: const EdgeInsets.symmetric(vertical: 20),
-          child: Stack(
-            children: [
-              Column(
-                children: [
-                  _LoginCenterText(),
-                  Expanded(
-                    child: SingleChildScrollView(
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 30,
-                          vertical: 10,
-                        ),
-                        child: Form(
-                          child: Column(
-                            children: [
-                              const CustomInput(
-                                hintText: 'myemail.example@correo.com',
-                                labelText: 'Email',
-                                obsqureText: false,
-                              ),
-                              const SizedBox(height: 20),
-                              const CustomInput(
-                                hintText: 'myemail.example@correo.com',
-                                labelText: 'Email',
-                                obsqureText: false,
-                              ),
-                              const SizedBox(height: 30),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(horizontal: 5.0),
-                                child: ButtonInfinityCustom(
-                                  textButton: 'Entrar',
-                                  bgButton: Colors.black,
-                                  onPressed: () => Navigator.pushNamed(
-                                    context,
-                                    'home_screen',
-                                  ),
+        child: FadeInLeft(
+          child: Container(
+            margin: const EdgeInsets.symmetric(vertical: 20),
+            child: Stack(
+              children: [
+                Column(
+                  children: [
+                    _LoginCenterText(),
+                    Expanded(
+                      child: SingleChildScrollView(
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 30,
+                            vertical: 10,
+                          ),
+                          child: Form(
+                            child: Column(
+                              children: [
+                                const CustomInput(
+                                  hintText: 'myemail.example@correo.com',
+                                  labelText: 'Email',
+                                  obsqureText: false,
                                 ),
-                              )
-                            ],
+                                const SizedBox(height: 20),
+                                const CustomInput(
+                                  hintText: '1234',
+                                  labelText: 'Your pin',
+                                  obsqureText: false,
+                                ),
+                                const SizedBox(height: 30),
+                                Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 5.0),
+                                  child: ButtonInfinityCustom(
+                                    textButton: 'Entrar',
+                                    bgButton: Colors.black,
+                                    onPressed: () => Navigator.pushNamed(
+                                      context,
+                                      'home_screen',
+                                    ),
+                                  ),
+                                )
+                              ],
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                  )
-                ],
-              ),
-            ],
+                    )
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),

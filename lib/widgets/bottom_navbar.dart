@@ -15,21 +15,21 @@ class BottomNavBar extends StatelessWidget {
             IconlyLight.home,
             size: 30,
           ),
-          label: '',
+          label: 'Home',
         ),
         BottomNavigationBarItem(
           icon: Icon(
-            IconlyLight.category,
+            IconlyLight.swap,
             size: 30,
           ),
-          label: '',
+          label: 'Transactions',
         ),
         BottomNavigationBarItem(
           icon: Icon(
             IconlyLight.setting,
             size: 30,
           ),
-          label: '',
+          label: 'Settings',
         ),
       ],
       selectedItemColor: const Color(0xffeb4747),

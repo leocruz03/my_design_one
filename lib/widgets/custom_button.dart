@@ -32,7 +32,10 @@ class ButtonInfinityCustom extends StatelessWidget {
       child: SizedBox(
         width: double.infinity,
         child: Center(
-          child: Text(textButton),
+          child: Container(
+            padding: const EdgeInsets.symmetric(vertical: 15),
+            child: Text(textButton),
+          ),
         ),
       ),
     );
