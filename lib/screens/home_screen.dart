@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:animate_do/animate_do.dart';
+import 'package:iconly/iconly.dart';
 
 import 'package:my_design_one/widgets/bottom_navbar.dart';
 import 'package:my_design_one/widgets/scroll_transactions.dart';
@@ -10,42 +11,29 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: FadeInLeft(
-          child: Container(
-            margin:
-                const EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
-            child: Stack(
-              children: [
-                Column(
-                  children: [
-                    Text(
-                      'Hi, first_name',
-                      style: GoogleFonts.raleway(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 20.0,
-                    ),
-                    const Expanded(
-                      child: ScrollTransactions(),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
-      bottomNavigationBar: Padding(
-        padding: const EdgeInsets.all(10.0),
-        child: FadeInUp(
-          child: const BottomNavBar(),
-        ),
-      ),
+    return const Scaffold(
+      bottomNavigationBar: BottomNavBar(),
+      floatingActionButton: MainButtonNav(),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
+  }
+}
+
+class MainButtonNav extends StatelessWidget {
+  const MainButtonNav({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return FloatingActionButton(
+      onPressed: () {},
+      child: const Icon(IconlyLight.home),
+    );
+  }
+}
+
+class _HomePageBody extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container();
   }
 }

@@ -12,17 +12,10 @@ class BottomNavBar extends StatelessWidget {
       items: const [
         BottomNavigationBarItem(
           icon: Icon(
-            IconlyLight.home,
-            size: 30,
-          ),
-          label: 'Home',
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(
             IconlyLight.swap,
             size: 30,
           ),
-          label: 'Transactions',
+          label: 'Home',
         ),
         BottomNavigationBarItem(
           icon: Icon(
