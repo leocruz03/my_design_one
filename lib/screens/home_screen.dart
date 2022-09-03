@@ -1,32 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:animate_do/animate_do.dart';
-import 'package:iconly/iconly.dart';
+/* import 'package:google_fonts/google_fonts.dart';
+import 'package:animate_do/animate_do.dart'; */
+/* import 'package:iconly/iconly.dart'; */
+import 'package:provider/provider.dart';
+
+import 'package:my_design_one/bodys/home_body.dart';
+import 'package:my_design_one/bodys/settings_body.dart';
+import 'package:my_design_one/bodys/transactions_body.dart';
+import 'package:my_design_one/providers/body_provider.dart';
 
 import 'package:my_design_one/widgets/bottom_navbar.dart';
-import 'package:my_design_one/widgets/scroll_transactions.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      bottomNavigationBar: BottomNavBar(),
-      floatingActionButton: MainButtonNav(),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-    );
-  }
-}
-
-class MainButtonNav extends StatelessWidget {
-  const MainButtonNav({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return FloatingActionButton(
-      onPressed: () {},
-      child: const Icon(IconlyLight.home),
+    return Scaffold(
+      body: _HomePageBody(),
+      bottomNavigationBar: const BottomNavBar(),
     );
   }
 }
@@ -34,6 +26,24 @@ class MainButtonNav extends StatelessWidget {
 class _HomePageBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    // Obtener el selectedMenuOptBody
+    final bodyProvider = Provider.of<BodyProvider>(context);
+
+    // Cambiar para mostrar la pagina respectiva
+    final currentIndex = bodyProvider.selectedMenuOptBody;
+
+    switch (currentIndex) {
+      case 0:
+        return const TransactionsBody();
+
+      case 1:
+        return const HomeBody();
+
+      case 2:
+        return const SettingsBody();
+
+      default:
+        return const HomeBody();
+    }
   }
 }
