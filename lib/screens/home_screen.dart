@@ -34,10 +34,10 @@ class _HomePageBody extends StatelessWidget {
 
     switch (currentIndex) {
       case 0:
-        return const TransactionsBody();
+        return const HomeBody();
 
       case 1:
-        return const HomeBody();
+        return const TransactionsBody();
 
       case 2:
         return const SettingsBody();
