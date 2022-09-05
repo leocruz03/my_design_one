@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:my_design_one/providers/body_provider.dart';
+import 'package:my_design_one/screens/add_cost.dart';
 import 'package:my_design_one/screens/home_screen.dart';
 import 'package:my_design_one/screens/login_screen.dart';
 import 'package:my_design_one/screens/register_screen.dart';
 import 'package:my_design_one/screens/welcome_screen.dart';
 import 'package:provider/provider.dart';
+
 /* import 'package:my_design_one/screens/welcome_screen.dart'; */
 
 void main() {
@@ -33,6 +35,7 @@ class MyApp extends StatelessWidget {
           'register_screen': (_) => const RegisterScreen(),
           'login_screen': (_) => const LoginScreen(),
           'home_screen': (_) => const HomeScreen(),
+          'add_cost': (_) => const AddCostScreen(),
         },
       ),
     );

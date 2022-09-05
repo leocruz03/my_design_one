@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:iconly/iconly.dart';
 /* import 'package:google_fonts/google_fonts.dart';
 import 'package:animate_do/animate_do.dart'; */
 /* import 'package:iconly/iconly.dart'; */
@@ -19,6 +20,14 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       body: _HomePageBody(),
       bottomNavigationBar: const BottomNavBar(),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.black,
+        onPressed: () => Navigator.pushNamed(context, 'add_cost'),
+        child: const Icon(
+          IconlyLight.plus,
+          size: 30,
+        ),
+      ),
     );
   }
 }
