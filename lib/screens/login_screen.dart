@@ -2,8 +2,10 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 
 import 'package:google_fonts/google_fonts.dart';
+import 'package:my_design_one/providers/login_form_provider.dart';
 import 'package:my_design_one/widgets/custom_button.dart';
 import 'package:my_design_one/widgets/custom_input.dart';
+import 'package:provider/provider.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -27,39 +29,9 @@ class LoginScreen extends StatelessWidget {
                             horizontal: 30,
                             vertical: 10,
                           ),
-                          child: Form(
-                            child: Column(
-                              children: [
-                                CustomInput(
-                                  hintText: 'myemail.example@correo.com',
-                                  labelText: 'Email',
-                                  obsqureText: false,
-                                  typeInput: TextInputType.emailAddress,
-                                  validator: (value) => 'hola',
-                                ),
-                                const SizedBox(height: 20),
-                                CustomInput(
-                                  hintText: '1234',
-                                  labelText: 'Your pin',
-                                  obsqureText: false,
-                                  typeInput: TextInputType.number,
-                                  validator: (value) => 'hola',
-                                ),
-                                const SizedBox(height: 30),
-                                Padding(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 5.0),
-                                  child: ButtonInfinityCustom(
-                                    textButton: 'Entrar',
-                                    bgButton: Colors.black,
-                                    onPressed: () => Navigator.pushNamed(
-                                      context,
-                                      'home_screen',
-                                    ),
-                                  ),
-                                )
-                              ],
-                            ),
+                          child: ChangeNotifierProvider(
+                            create: (_) => LoginFormProvider(),
+                            child: const _FormLogin(),
                           ),
                         ),
                       ),
@@ -70,6 +42,74 @@ class LoginScreen extends StatelessWidget {
             ),
           ),
         ),
+      ),
+    );
+  }
+}
+
+class _FormLogin extends StatelessWidget {
+  const _FormLogin({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final loginForm = Provider.of<LoginFormProvider>(context);
+
+    return Form(
+      key: loginForm.formLoginKey,
+      autovalidateMode: AutovalidateMode.onUserInteraction,
+      child: Column(
+        children: [
+          CustomInput(
+            hintText: 'myemail.example@correo.com',
+            labelText: 'Email',
+            obsqureText: false,
+            typeInput: TextInputType.emailAddress,
+            onChanged: (value) => loginForm.email = value,
+            validator: (value) {
+              String pattern =
+                  r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
+              RegExp regExp = RegExp(pattern);
+
+              return regExp.hasMatch(value ?? '')
+                  ? null
+                  : 'No luce como un correo';
+            },
+          ),
+          const SizedBox(height: 20),
+          CustomInput(
+            hintText: '1234',
+            labelText: 'Your pin',
+            obsqureText: true,
+            typeInput: TextInputType.number,
+            onChanged: (value) => loginForm.pin = value,
+            validator: (value) {
+              if (value == null) {
+                return 'Este campo es requerido';
+              } else if (value.length < 4) {
+                return 'Se necesitan 4 números';
+              } else if (value.length > 4) {
+                return 'Deben ser 4 numeros';
+              }
+              return null;
+            },
+          ),
+          const SizedBox(height: 30),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 5.0),
+            child: ButtonInfinityCustom(
+                textButton: 'Entrar',
+                bgButton: Colors.black,
+                onPressed: () {
+                  if (!loginForm.isValidForm()) {
+                    return;
+                  } else {
+                    Navigator.pushReplacementNamed(context, 'home_screen');
+                  }
+                }),
+          )
+        ],
       ),
     );
   }
