@@ -30,18 +30,20 @@ class LoginScreen extends StatelessWidget {
                           child: Form(
                             child: Column(
                               children: [
-                                const CustomInput(
+                                CustomInput(
                                   hintText: 'myemail.example@correo.com',
                                   labelText: 'Email',
                                   obsqureText: false,
                                   typeInput: TextInputType.emailAddress,
+                                  validator: (value) => 'hola',
                                 ),
                                 const SizedBox(height: 20),
-                                const CustomInput(
+                                CustomInput(
                                   hintText: '1234',
                                   labelText: 'Your pin',
                                   obsqureText: false,
                                   typeInput: TextInputType.number,
+                                  validator: (value) => 'hola',
                                 ),
                                 const SizedBox(height: 30),
                                 Padding(

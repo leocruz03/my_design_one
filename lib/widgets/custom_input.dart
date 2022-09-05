@@ -7,6 +7,8 @@ class CustomInput extends StatelessWidget {
   final String? helperText;
   final TextInputType? typeInput;
   final bool obsqureText;
+  final String? Function(String?)? validator;
+  final void Function(String)? onChanged;
 
   const CustomInput({
     Key? key,
@@ -15,6 +17,8 @@ class CustomInput extends StatelessWidget {
     this.helperText,
     this.typeInput,
     required this.obsqureText,
+    this.validator,
+    this.onChanged,
   }) : super(key: key);
 
   @override
@@ -22,6 +26,8 @@ class CustomInput extends StatelessWidget {
     return TextFormField(
       keyboardType: typeInput,
       obscureText: obsqureText,
+      validator: validator,
+      onChanged: onChanged,
       style: const TextStyle(
         color: Color(0xff354259),
       ),
