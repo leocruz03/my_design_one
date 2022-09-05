@@ -1,5 +1,6 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import 'package:google_fonts/google_fonts.dart';
 
@@ -21,71 +22,16 @@ class RegisterScreen extends StatelessWidget {
             child: Stack(
               children: [
                 Column(
-                  children: [
-                    const _RegisterCenterText(),
+                  children: const [
+                    _RegisterCenterText(),
                     Expanded(
                       child: SingleChildScrollView(
                         child: Padding(
-                          padding: const EdgeInsets.symmetric(
+                          padding: EdgeInsets.symmetric(
                             vertical: 10,
                             horizontal: 30,
                           ),
-                          child: Form(
-                            child: Column(
-                              children: [
-                                const CustomInput(
-                                  hintText: 'Leonardo',
-                                  labelText: 'First name',
-                                  obsqureText: false,
-                                ),
-                                const SizedBox(height: 20),
-                                const CustomInput(
-                                  hintText: 'De la cruz',
-                                  labelText: 'Last name',
-                                  obsqureText: false,
-                                ),
-                                const SizedBox(height: 20),
-                                const CustomInput(
-                                  hintText: 'example.email@myemail.com',
-                                  labelText: 'Email',
-                                  obsqureText: false,
-                                ),
-                                const SizedBox(height: 20),
-                                const CustomInput(
-                                  hintText: '1234',
-                                  labelText: 'Create pin',
-                                  helperText: 'only 4 numbers',
-                                  obsqureText: true,
-                                ),
-                                const SizedBox(height: 30.0),
-                                Padding(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 5.0),
-                                  child: ButtonInfinityCustom(
-                                    textButton: 'Registrarme',
-                                    bgButton: Colors.black,
-                                    onPressed: () => Navigator.pushNamed(
-                                      context,
-                                      'home_screen',
-                                    ),
-                                  ),
-                                ),
-                                const SizedBox(height: 30.0),
-                                Padding(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 5.0),
-                                  child: ButtonInfinityCustom(
-                                    textButton: '¿Tienes cuenta? entra aquí',
-                                    bgButton: Colors.black,
-                                    onPressed: () => Navigator.pushNamed(
-                                      context,
-                                      'login_screen',
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
+                          child: _FormRegister(),
                         ),
                       ),
                     ),
@@ -95,6 +41,74 @@ class RegisterScreen extends StatelessWidget {
             ),
           ),
         ),
+      ),
+    );
+  }
+}
+
+class _FormRegister extends StatelessWidget {
+  const _FormRegister({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Form(
+      child: Column(
+        children: [
+          const CustomInput(
+            hintText: 'Leonardo',
+            labelText: 'First name',
+            obsqureText: false,
+            typeInput: TextInputType.text,
+          ),
+          const SizedBox(height: 20),
+          const CustomInput(
+            hintText: 'De la cruz',
+            labelText: 'Last name',
+            obsqureText: false,
+            typeInput: TextInputType.text,
+          ),
+          const SizedBox(height: 20),
+          const CustomInput(
+            hintText: 'example.email@myemail.com',
+            labelText: 'Email',
+            obsqureText: false,
+            typeInput: TextInputType.emailAddress,
+          ),
+          const SizedBox(height: 20),
+          const CustomInput(
+            hintText: '1234',
+            labelText: 'Create pin',
+            helperText: 'only 4 numbers',
+            obsqureText: true,
+            typeInput: TextInputType.number,
+          ),
+          const SizedBox(height: 30.0),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 5.0),
+            child: ButtonInfinityCustom(
+              textButton: 'Registrarme',
+              bgButton: Colors.black,
+              onPressed: () => Navigator.pushNamed(
+                context,
+                'home_screen',
+              ),
+            ),
+          ),
+          const SizedBox(height: 30.0),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 5.0),
+            child: ButtonInfinityCustom(
+              textButton: '¿Tienes cuenta? entra aquí',
+              bgButton: Colors.black,
+              onPressed: () => Navigator.pushNamed(
+                context,
+                'login_screen',
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

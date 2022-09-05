@@ -34,12 +34,14 @@ class LoginScreen extends StatelessWidget {
                                   hintText: 'myemail.example@correo.com',
                                   labelText: 'Email',
                                   obsqureText: false,
+                                  typeInput: TextInputType.emailAddress,
                                 ),
                                 const SizedBox(height: 20),
                                 const CustomInput(
                                   hintText: '1234',
                                   labelText: 'Your pin',
                                   obsqureText: false,
+                                  typeInput: TextInputType.number,
                                 ),
                                 const SizedBox(height: 30),
                                 Padding(

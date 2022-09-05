@@ -6,13 +6,15 @@ class AddCostScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.black,
-      ),
-      body: SafeArea(
-        child: FadeInDown(
-          child: const Center(
+    return FadeInUp(
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text('Añade un gasto'),
+          centerTitle: true,
+          backgroundColor: Colors.black,
+        ),
+        body: const SafeArea(
+          child: Center(
             child: Text('Hola Mundo'),
           ),
         ),
