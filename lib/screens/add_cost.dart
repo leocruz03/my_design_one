@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 
 class AddCostScreen extends StatelessWidget {
@@ -5,9 +6,16 @@ class AddCostScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text('Hola Mundo'),
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.black,
+      ),
+      body: SafeArea(
+        child: FadeInDown(
+          child: const Center(
+            child: Text('Hola Mundo'),
+          ),
+        ),
       ),
     );
   }

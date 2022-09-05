@@ -35,20 +35,18 @@ class WelcomeTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        children: [
-          Text(
-            'Easy Savings',
-            style: GoogleFonts.raleway(
-              textStyle: const TextStyle(
-                fontSize: 30,
-                fontWeight: FontWeight.w800,
-              ),
+    return Column(
+      children: [
+        Text(
+          'Easy Savings',
+          style: GoogleFonts.raleway(
+            textStyle: const TextStyle(
+              fontSize: 30,
+              fontWeight: FontWeight.w800,
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
@@ -60,32 +58,30 @@ class MainInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        children: [
-          Text(
-            'Bienvenid@',
-            style: GoogleFonts.raleway(
-              fontSize: 30,
-              fontWeight: FontWeight.bold,
-            ),
+    return Column(
+      children: [
+        Text(
+          'Bienvenid@',
+          style: GoogleFonts.raleway(
+            fontSize: 30,
+            fontWeight: FontWeight.bold,
           ),
-          const SizedBox(
-            height: 20,
+        ),
+        const SizedBox(
+          height: 20,
+        ),
+        Text(
+          'La nueva app para controlar tus ahorros',
+          style: GoogleFonts.raleway(
+            fontSize: 16,
+            fontWeight: FontWeight.w600,
           ),
-          Text(
-            'La nueva app para controlar tus ahorros',
-            style: GoogleFonts.raleway(
-              fontSize: 16,
-              fontWeight: FontWeight.w600,
-            ),
-          ),
-          const SizedBox(
-            height: 40,
-          ),
-          const RowNextInd(),
-        ],
-      ),
+        ),
+        const SizedBox(
+          height: 40,
+        ),
+        const RowNextInd(),
+      ],
     );
   }
 }
