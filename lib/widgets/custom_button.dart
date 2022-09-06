@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ButtonInfinityCustom extends StatelessWidget {
-  final Function() onPressed;
+  final void Function() onPressed;
   final String textButton;
   final Color bgButton;
 

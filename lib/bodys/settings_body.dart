@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:iconly/iconly.dart';
 import 'package:my_design_one/widgets/custom_button.dart';
 
 class SettingsBody extends StatelessWidget {
@@ -56,7 +55,12 @@ class SettingsBody extends StatelessWidget {
                               ),
                               ButtonInfinityCustom(
                                 textButton: 'Cerrar sesión',
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.pushReplacementNamed(
+                                    context,
+                                    'register_screen',
+                                  );
+                                },
                                 bgButton: Colors.red.shade600,
                               ),
                             ],
@@ -92,9 +96,9 @@ class RowUserSettings extends StatelessWidget {
             fontWeight: FontWeight.w600,
           ),
         ),
-        const CircleAvatar(
+        /* const CircleAvatar(
           backgroundColor: Colors.black,
-        ),
+        ), */
       ],
     );
   }
