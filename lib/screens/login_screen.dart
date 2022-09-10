@@ -107,7 +107,7 @@ class _FormLogin extends StatelessWidget {
                   } else {
                     Navigator.pushReplacementNamed(context, 'home_screen');
                   }
-                }),
+                },),
           )
         ],
       ),
