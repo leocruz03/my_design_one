@@ -34,7 +34,7 @@ class CustomInput extends StatelessWidget {
       decoration: InputDecoration(
         hintText: hintText,
         hintStyle: const TextStyle(
-          // Este warning es por que es color hexadecimal que tiene dos números más correspondientes a la opacidad
+          // Este warning es porque es color hexadecimal que tiene dos números más correspondientes a la opacidad
           color: Color(0xff35425960),
         ),
         labelText: labelText,
