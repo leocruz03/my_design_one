@@ -65,7 +65,7 @@ class PageTwo extends StatelessWidget {
                 bgButton: Colors.black,
                 onPressed: () => Navigator.pushNamed(
                   context,
-                  'register_screen',
+                  'login_screen',
                 ),
               ),
             ),

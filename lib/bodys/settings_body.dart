@@ -58,7 +58,7 @@ class SettingsBody extends StatelessWidget {
                                 onPressed: () {
                                   Navigator.pushReplacementNamed(
                                     context,
-                                    'register_screen',
+                                    'welcome_screen',
                                   );
                                 },
                                 bgButton: Colors.red.shade600,
