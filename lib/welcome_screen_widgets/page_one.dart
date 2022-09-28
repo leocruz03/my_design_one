@@ -38,7 +38,7 @@ class WelcomeTitle extends StatelessWidget {
     return Column(
       children: [
         Text(
-          'Easy Savings',
+          'Costos APL',
           style: GoogleFonts.raleway(
             textStyle: const TextStyle(
               fontSize: 30,
@@ -71,7 +71,7 @@ class MainInfo extends StatelessWidget {
           height: 20,
         ),
         Text(
-          'La nueva app para controlar tus ahorros',
+          'App para controlar los costos en viajes',
           style: GoogleFonts.raleway(
             fontSize: 16,
             fontWeight: FontWeight.w600,

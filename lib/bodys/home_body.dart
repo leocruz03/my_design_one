@@ -25,8 +25,14 @@ class HomeBody extends StatelessWidget {
                     height: 30,
                   ),
                   Column(
-                    children: const [
-                      Text('APL Costos'),
+                    children: [
+                      Text(
+                        'APL Costos',
+                        style: GoogleFonts.raleway(
+                          fontSize: 25,
+                          fontWeight: FontWeight.w800,
+                        ),
+                      ),
                     ],
                   ),
                 ],

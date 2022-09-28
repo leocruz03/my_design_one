@@ -99,15 +99,16 @@ class _FormLogin extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 5.0),
             child: ButtonInfinityCustom(
-                textButton: 'Entrar',
-                bgButton: Colors.black,
-                onPressed: () {
-                  if (!loginForm.isValidForm()) {
-                    return;
-                  } else {
-                    Navigator.pushReplacementNamed(context, 'home_screen');
-                  }
-                },),
+              textButton: 'Entrar',
+              bgButton: Colors.black,
+              onPressed: () {
+                if (!loginForm.isValidForm()) {
+                  return;
+                } else {
+                  Navigator.pushReplacementNamed(context, 'home_screen');
+                }
+              },
+            ),
           )
         ],
       ),

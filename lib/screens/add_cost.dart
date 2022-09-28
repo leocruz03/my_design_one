@@ -34,15 +34,15 @@ class AddCostScreen extends StatelessWidget {
                             child: Column(
                               children: const [
                                 CustomInput(
-                                  hintText: 'Bogotá, Cúcuta',
+                                  hintText: 'Bogotá, Cúcuta...',
                                   labelText: 'Ciudad',
                                   typeInput: TextInputType.text,
                                   obsqureText: false,
                                 ),
                                 SizedBox(height: 20),
                                 CustomInput(
-                                  hintText: 'Bogotá, Cúcuta',
-                                  labelText: 'Ciudad',
+                                  hintText: '\$30.500',
+                                  labelText: 'Costo',
                                   typeInput: TextInputType.text,
                                   obsqureText: false,
                                 ),
