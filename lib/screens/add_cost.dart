@@ -1,5 +1,6 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:my_design_one/widgets/custom_button.dart';
 import 'package:my_design_one/widgets/custom_input.dart';
 
 class AddCostScreen extends StatelessWidget {
@@ -21,44 +22,80 @@ class AddCostScreen extends StatelessWidget {
               children: [
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const _AddCostTitle(),
+                  children: const [
+                    _AddCostTitle(),
                     Expanded(
                       child: SingleChildScrollView(
                         child: Padding(
-                          padding: const EdgeInsets.symmetric(
+                          padding: EdgeInsets.symmetric(
                             horizontal: 30,
                             vertical: 10,
                           ),
-                          child: Form(
-                            child: Column(
-                              children: const [
-                                CustomInput(
-                                  hintText: 'Bogotá, Cúcuta...',
-                                  labelText: 'Ciudad',
-                                  typeInput: TextInputType.text,
-                                  obsqureText: false,
-                                ),
-                                SizedBox(height: 20),
-                                CustomInput(
-                                  hintText: '\$30.500',
-                                  labelText: 'Costo',
-                                  typeInput: TextInputType.text,
-                                  obsqureText: false,
-                                ),
-                                SizedBox(height: 20),
-                              ],
-                            ),
-                          ),
+                          child: _FormAddCost(),
                         ),
                       ),
                     ),
                   ],
-                )
+                ),
               ],
             ),
           ),
         ),
+      ),
+    );
+  }
+}
+
+class _FormAddCost extends StatelessWidget {
+  const _FormAddCost({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Form(
+      child: Column(
+        children: [
+          const CustomInput(
+            hintText: 'Bogotá, Cúcuta...',
+            labelText: 'Ciudad',
+            typeInput: TextInputType.text,
+            obsqureText: false,
+          ),
+          const SizedBox(height: 20),
+          const CustomInput(
+            hintText: 'Taxi, Almuerzo...',
+            labelText: 'Qué pagó',
+            typeInput: TextInputType.text,
+            obsqureText: false,
+          ),
+          const SizedBox(height: 20),
+          const CustomInput(
+            hintText: '\$30.500',
+            labelText: 'Costo',
+            typeInput: TextInputType.text,
+            obsqureText: false,
+          ),
+          const SizedBox(height: 20),
+          const CustomInput(
+            hintText: 'Cédula',
+            labelText: 'Cédula',
+            typeInput: TextInputType.text,
+            obsqureText: false,
+          ),
+          const SizedBox(height: 20),
+          ButtonInfinityCustom(
+            textButton: 'Enviar',
+            onPressed: () {},
+            bgButton: Colors.black,
+          ),
+          const SizedBox(height: 20),
+          ButtonInfinityCustom(
+            textButton: 'Cancelar',
+            onPressed: () => Navigator.pop(context, 'home_screen'),
+            bgButton: Colors.red,
+          ),
+        ],
       ),
     );
   }

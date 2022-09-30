@@ -25,21 +25,82 @@ class HomeBody extends StatelessWidget {
                     height: 30,
                   ),
                   Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'APL Costos',
+                        'Total de costos',
                         style: GoogleFonts.raleway(
-                          fontSize: 25,
+                          fontSize: 30,
                           fontWeight: FontWeight.w800,
                         ),
                       ),
+                      const SizedBox(
+                        height: 20,
+                      ),
                     ],
                   ),
+                  Expanded(
+                    child: SingleChildScrollView(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: const [
+                          _CityName(
+                            cityName: 'Bogotá',
+                          ),
+                          _TotalPrice(
+                            totalCost: 300000,
+                          )
+                        ],
+                      ),
+                    ),
+                  )
                 ],
               ),
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class _CityName extends StatelessWidget {
+  final String cityName;
+
+  const _CityName({
+    Key? key,
+    required this.cityName,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      cityName,
+      style: const TextStyle(
+        fontSize: 25,
+        fontWeight: FontWeight.w800,
+        color: Colors.black,
+      ),
+    );
+  }
+}
+
+class _TotalPrice extends StatelessWidget {
+  final int totalCost;
+
+  const _TotalPrice({
+    Key? key,
+    required this.totalCost,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      '\$ $totalCost COP'.toString(),
+      style: TextStyle(
+        fontSize: 25,
+        fontWeight: FontWeight.w800,
+        color: Colors.green.shade700,
       ),
     );
   }
@@ -63,13 +124,6 @@ class _UserBodyHome extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 20),
-        Text(
-          'username worker',
-          style: GoogleFonts.raleway(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
       ],
     );
   }
